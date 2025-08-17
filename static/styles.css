@@ -1,0 +1,71 @@
+/* Base layout */
+:root {
+	--bg: #0f172a;
+	--panel: #111827;
+	--text: #e5e7eb;
+	--muted: #9ca3af;
+	--accent: #60a5fa;
+	--border: #1f2937;
+	--row-alt: #0b1220;
+	--row-hover: #0d1829;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+	background: var(--bg);
+	color: var(--text);
+}
+
+.container {
+	max-width: 960px;
+	margin: 3rem auto;
+	padding: 0 1rem;
+}
+
+h1 {
+	font-weight: 700;
+	letter-spacing: 0.2px;
+	margin: 0 0 1rem;
+}
+
+/* Table */
+.styled-table {
+	width: 100%;
+	border-collapse: collapse;
+	background: var(--panel);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.styled-table thead th {
+	text-align: left;
+	padding: 0.875rem 1rem;
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: var(--muted);
+	background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0));
+	border-bottom: 1px solid var(--border);
+}
+
+.styled-table tbody td {
+	padding: 0.875rem 1rem;
+	border-bottom: 1px solid var(--border);
+}
+
+.styled-table tbody tr:nth-child(2n) td {
+	background: var(--row-alt);
+}
+
+.styled-table tbody tr:hover td {
+	background: var(--row-hover);
+}
+
+/* Subtle focus outline for accessibility */
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+}
